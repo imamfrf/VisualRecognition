@@ -10,7 +10,7 @@ import com.ibm.watson.developer_cloud.visual_recognition.v3.model.ClassifyOption
 import com.imamfrf.visualrecognition.utils.DummyAnimal
 import java.io.File
 
-class MainPresenter(val view: MainView) {
+class MainPresenter(private val view: MainView) {
 
     fun imageRecognition(file: File, activity: Activity){
         AsyncTask.execute {
@@ -32,6 +32,9 @@ class MainPresenter(val view: MainView) {
                 activity.runOnUiThread {
                     view.onSuccess(DummyAnimal.getAnimal(className)!!)
                 }
+            }
+            else{
+                view.onFailure()
             }
         }
 
