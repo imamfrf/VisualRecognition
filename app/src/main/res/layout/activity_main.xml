@@ -29,7 +29,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintBottom_toTopOf="@id/text_view_class"
+        app:layout_constraintBottom_toTopOf="@id/text_view_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_take_picture"
@@ -37,7 +37,7 @@
         android:contentDescription="Taken Picture" />
 
     <TextView
-        android:id="@+id/text_view_class"
+        android:id="@+id/text_view_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,19 +45,48 @@
         android:layout_marginEnd="16dp"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintBottom_toTopOf="@id/text_view_species"
+        android:textStyle="bold"
         tools:text="Kucing" />
+    <TextView
+        android:id="@+id/text_view_species"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_name"
+        app:layout_constraintBottom_toTopOf="@id/text_view_detail"
+        android:textStyle="italic"
+        tools:text="Felis catus"
+        />
+
+    <TextView
+        android:id="@+id/text_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_species"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Kingdom : Animalia"
+        />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/text_view_class"
-        app:layout_constraintEnd_toEndOf="@id/text_view_class"
-        app:layout_constraintStart_toStartOf="@id/text_view_class"
-        app:layout_constraintTop_toTopOf="@id/text_view_class" />
+        app:layout_constraintBottom_toBottomOf="@id/text_view_name"
+        app:layout_constraintEnd_toEndOf="@id/text_view_name"
+        app:layout_constraintStart_toStartOf="@id/text_view_name"
+        app:layout_constraintTop_toTopOf="@id/text_view_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
