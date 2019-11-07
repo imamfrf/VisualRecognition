@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), MainView {
         presenter = MainPresenter(this)
 
         cameraHelper = CameraHelper(this)
+
         button_take_picture.setOnClickListener {
             cameraHelper.dispatchTakePictureIntent()
         }
@@ -38,30 +39,6 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-//    private fun imageRecognition(file: File) {
-//        AsyncTask.execute {
-//            val options = IamOptions.Builder()
-//                .apiKey(BuildConfig.WATSON_API_KEY)
-//                .build()
-//            val visualRecognition = VisualRecognition("2018-03-19", options)
-//
-//            val classifyOptions = ClassifyOptions.Builder()
-//                .imagesFile(file)
-//                .classifierIds(listOf("AnimalCustomModel_1525594914"))
-//                .build()
-//
-//            val result = visualRecognition.classify(classifyOptions).execute()
-//            println(result)
-//            val className = result.images[0].classifiers[0].classes[0].className
-//
-//            if (className != null) {
-//                runOnUiThread {
-//                    text_view_name.text = className
-//                    progress_bar.visibility = View.GONE
-//                }
-//            }
-//        }
-//    }
 
     override fun onSuccess(animal: Animal) {
         progress_bar.visibility = View.GONE
